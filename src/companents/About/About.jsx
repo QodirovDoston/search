@@ -8,12 +8,10 @@ export default function About() {
     const [today, setToday] = useState([])
     const [value, SetValue] = useState("")
 
-
     const FetchingData = async () => {
         const res = await axios.get("https://jsonplaceholder.typicode.com/users")
         return res
     }
-
     useEffect(() => {
         FetchingData().then(res => setToday(res.data))
     }, [])
